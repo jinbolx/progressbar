@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jin.customtextview.MainActivity">
+
+    <com.example.jin.customtextview.CTextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#eee"
+        android:padding="20dp"
+        android:visibility="gone"
+        app:titleColor="@color/colorAccent"
+        app:titleSize="40sp"
+        app:titleText="10000000" />
+
+    <com.example.jin.customtextview.CImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:padding="20dp"
+        android:visibility="gone"
+        app:image="@mipmap/ic_launcher_round"
+        app:imageScaleType="fitXY"
+        app:titleText="@string/app_name" />
+
+    <com.example.jin.customtextview.CProgressBar
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:circleWidth="10dp"
+        app:firstColor="#ff0"
+        app:secondColor="#0ff"
+        app:speed="50" />
+
+    <com.example.progressbar.HorizontalProgressBar
+        android:id="@+id/pb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        app:progress_reached_bar_height="3dp"
+        app:progress_reached_color="@color/colorAccent"
+        app:progress_text_color="#e81"
+        app:progress_text_size="16sp"
+        app:progress_text_visible="visible"
+        app:progress_unreached_bar_height="1dp"
+        app:progress_unreached_color="@color/colorAccent" />
+</RelativeLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="titleSize" format="dimension" />
+    <attr name="titleColor" format="color" />
+    <attr name="titleText" format="string" />
+
+    <attr name="firstColor" format="color"/>
+    <attr name="secondColor" format="color"/>
+    <attr name="circleWidth" format="dimension"/>
+    <attr name="speed" format="integer"/>
+
+    <declare-styleable name="CTextView">
+        <attr name="titleText" />
+
+        <attr name="titleColor" />
+
+        <!--表示attr是尺寸类型，例如取值16px、16dp，也可以使用一个指向类型的资源-->
+        <attr name="titleSize" />
+
+        <!--百分比-->
+        <attr name="titlePercent" format="fraction" />
+        <!--reference表示attr的值只能指向某一资源的ID，例如取值@id/textView-->
+
+        <!--
+        enum表示attr是枚举类型，在定义enum类型的attr时，可以将attr的format设置为enum，
+        也可以不用设置attr的format属性，但是必须在attr节点下面添加一个或多个enum节点。
+        取值时只能取其中一个枚举值
+        -->
+
+        <!--
+        flag表示attr是bit位标记，flag与enum有相似之处，
+        定义了flag的attr，在设置值时，可以通过|设置多个值，
+        而且每个值都对应一个bit位，
+        这样通过按位或操作符|可以将多个值合成一个值，
+        我们一般在用flag表示某个字段支持多个特性，
+        需要注意的是，要想使用flag类型，不能在attr上设置format为flag，
+        不要设置attr的format的属性，直接在attr节点下面添加flag节点即可-->
+    </declare-styleable>
+    <declare-styleable name="CImageView">
+        <attr name="titleText" />
+        <attr name="titleColor" />
+        <attr name="titleSize" />
+        <attr name="image" format="reference" />
+        <attr name="imageScaleType">
+            <enum name="center" value="0" />
+            <enum name="fitXY" value="1" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="CProgressBar">
+        <attr name="firstColor"/>
+        <attr name="secondColor"/>
+        <attr name="speed"/>
+        <attr name="circleWidth"/>
+    </declare-styleable>
+</resources>
