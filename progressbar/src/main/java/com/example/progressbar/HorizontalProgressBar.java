@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.widget.ProgressBar;
 
@@ -23,28 +24,30 @@ public class HorizontalProgressBar extends ProgressBar {
     private final int DEFAULT_TEXT_OFFSET = 20;
     private final int DEFAULT_TEXT_VISIBILITY = 1;
 
-    private int unReachedColor = DEFAULT_UNREACHED_COLOR;
-    private int reachedColor = DEFAULT_REACHED_COLOR;
-    private int unReachedBarHeight = DEFAULT_UNREACHED_BAR_HEIGHT;
-    private int reachedBarHeight = DEFAULT_REACHED_BAR_HEIGHT;
-    private int textSize = DEFAULT_TEXT_SIZE;
-    private int textOffset = DEFAULT_TEXT_OFFSET;
-    private int text_visible = DEFAULT_TEXT_VISIBILITY;
-    private int textColor = DEFAULT_TEXT_COLOR;
-    private Paint mPaint = new Paint();
-    private boolean drawText = true;
+    protected int unReachedColor = DEFAULT_UNREACHED_COLOR;
+    protected int reachedColor = DEFAULT_REACHED_COLOR;
+    protected int unReachedBarHeight = DEFAULT_UNREACHED_BAR_HEIGHT;
+    protected int reachedBarHeight = DEFAULT_REACHED_BAR_HEIGHT;
+    protected int textSize = DEFAULT_TEXT_SIZE;
+    protected int textOffset = DEFAULT_TEXT_OFFSET;
+    protected int text_visible = DEFAULT_TEXT_VISIBILITY;
+    protected int textColor = DEFAULT_TEXT_COLOR;
+    protected Paint mPaint = new Paint();
+    protected boolean drawText = true;
     protected int mRealWidth;
     public HorizontalProgressBar(Context context) {
        this(context,null);
+        Log.i("horizon","1");
     }
 
     public HorizontalProgressBar(Context context, AttributeSet attrs) {
        this(context,attrs,0);
+        Log.i("horizon","2");
     }
 
     public HorizontalProgressBar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-
+        Log.i("horizon","3");
         setHorizontalScrollBarEnabled(true);
         obtainStyledAttributes(context,attrs,defStyleAttr);
         mPaint.setTextSize(textSize);
@@ -118,6 +121,12 @@ public class HorizontalProgressBar extends ProgressBar {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         mRealWidth=w-getPaddingLeft()-getPaddingRight();
+    }
+    public int dp2px(int dpVal){
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,dpVal,getResources().getDisplayMetrics());
+    }
+    public int sp2px(int spVal){
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,spVal,getResources().getDisplayMetrics());
     }
 }
 

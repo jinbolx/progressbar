@@ -11,6 +11,7 @@
         <enum name="visible" value="1"/>
         <enum name="invisible" value="0"/>
     </attr>
+    <attr name="radius" format="dimension"/>
     <declare-styleable name="HorizontalProgressBar">
         <attr name="progress_unreached_color"/>
         <attr name="progress_reached_color" />
@@ -20,5 +21,8 @@
         <attr name="progress_text_color" />
         <attr name="progress_text_offset" />
         <attr name="progress_text_visible" />
+    </declare-styleable>
+    <declare-styleable name="RoundProgressBar">
+        <attr name="radius"/>
     </declare-styleable>
 </resources>

@@ -28,16 +28,15 @@
         app:titleText="@string/app_name" />
 
     <com.example.jin.customtextview.CProgressBar
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:visibility="gone"
         app:circleWidth="10dp"
         app:firstColor="#ff0"
         app:secondColor="#0ff"
         app:speed="50" />
 
-    <com.example.progressbar.HorizontalProgressBar
+   <!-- <com.example.progressbar.HorizontalProgressBar
         android:id="@+id/pb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,5 +49,16 @@
         app:progress_text_size="16sp"
         app:progress_text_visible="visible"
         app:progress_unreached_bar_height="1dp"
-        app:progress_unreached_color="@color/colorAccent" />
+        app:progress_unreached_color="@color/colorAccent" />-->
+    <com.example.progressbar.RoundProgressBar
+        android:layout_width="wrap_content"
+        app:progress_reached_bar_height="3dp"
+        app:progress_unreached_bar_height="1dp"
+        app:progress_unreached_color="#f00"
+        app:progress_reached_color="#38e"
+        app:radius="30dp"
+        app:progress_text_color="#f0f"
+        android:id="@+id/pb2"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content" />
 </RelativeLayout>
